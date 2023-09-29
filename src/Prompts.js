@@ -122,7 +122,7 @@ export default function Prompts() {
         <Typography variant="h4" align="center" marginTop="50px">
           Prompts
         </Typography>
-        <Grid container>
+        <Grid container marginTop="10px">
           {buttonInfos.map((item) =>
             ImageAsButton(item["src"], item["name"], setOpen, setAgent)
           )}

@@ -35,7 +35,7 @@ export default function Abstract() {
             Abstract
           </Typography>
           <Typography
-            marginTop="15px"
+            marginTop="10px"
             variant="body2"
             align="justify"
             sx={{
