@@ -18,7 +18,7 @@ import robotLeverDes from "./texts/legRobot_description_lever.txt";
 // import robotBox from "./texts/"
 
 const legRobot_box = {
-  video_url: "https://www.youtube.com/embed/eiTB0ojxetM?si=JZCZHkohT6iHgF1-",
+  video_url: "https://www.youtube.com/embed/Vuf-pVoiZlE?si=7VaXjja0UMRbAS6V",
   // code: "import numpy as np\n\n# Get the position and size of box_1\nbox_1_position, _ = get_position('box_1')\nbox_1_size = get_size('box_1')\n\n# Get the position and size of box_2\nbox_2_position, _ = get_position('box_2')\nbox_2_size = get_size('box_2')\n\n# Calculate the target position for box_2\ntarget_box_2_position = [box_1_position[0] - box_1_size[0]/2 - box_2_size[0]/2 - 0.01, box_1_position[1], box_1_position[2]]\n\n# Push box_2 to the target position\npush_to_position('box_2', target_box_2_position)\n\n# Get the updated position of box_2\nbox_2_position, _ = get_position('box_2')\n\n# Get the size of the robot\nrobot_size = get_size('robot')\n\n# Calculate the target position for the robot to climb onto box_2\ntarget_robot_position = [box_2_position[0], box_2_position[1], box_2_size[2]+robot_size[2]/2]\n\n# Climb onto box_2\nclimb_to_position(target_robot_position)\n\n# Get the updated position and size of box_1\nbox_1_position, _ = get_position('box_1')\nbox_1_size = get_size('box_1')\n\n# Calculate the target position for the robot to climb onto box_1\ntarget_robot_position = [box_1_position[0], box_1_position[1], box_1_size[2]+robot_size[2]/2]\n\n# Climb onto box_1\nclimb_to_position(target_robot_position)\n\n# Get the position and size of the sofa\nsofa_position, _ = get_position('sofa')\nsofa_size = get_size('sofa')\n\n# Calculate the target position for the robot to climb onto the sofa\ntarget_robot_position = [sofa_position[0], sofa_position[1], sofa_size[2]+robot_size[2]/2]\n\n# Climb onto the sofa\nclimb_to_position(target_robot_position)",
   file_path: robotBoxCode,
   description: robotBoxDes,
@@ -26,7 +26,7 @@ const legRobot_box = {
 };
 
 const legRobot_surfboard = {
-  video_url: "https://www.youtube.com/embed/BrY1QIKOVo0?si=dr1NrGhaAE-KO-rZ",
+  video_url: "https://www.youtube.com/embed/A5Xy8lxUig4?si=j0zQMUjhXSWgQaqD",
   // code: "import numpy as np\n\n# Get the positions and sizes of the objects\nsofa_1_position, _ = get_position('sofa_1')\nsofa_2_position, _ = get_position('sofa_2')\nsofa_2_size = get_size('sofa_2')\nrobot_size = get_size('robot')\n\n# Calculate the target position for the surfboard\nsurfboard_target_position = [(sofa_1_position[0] + sofa_2_position[0]) / 2, sofa_1_position[1], sofa_1_position[2]]\n\n# Push the surfboard to the target position\npush_to_position('surfboard', surfboard_target_position)\n\n# Calculate the target position for the robot\nrobot_target_position = [sofa_2_position[0], sofa_2_position[1], sofa_2_size[2] + robot_size[2] / 2]\n\n# Walk to the target position\nwalk_to_position(robot_target_position)",
   file_path: robotSurfboardCode,
   description: robotSurfboardDes,
@@ -34,7 +34,7 @@ const legRobot_surfboard = {
 };
 
 const legRobot_lever = {
-  video_url: "https://www.youtube.com/embed/W-T5WBzC3MA?si=x_N2K_PHcia8EeJu",
+  video_url: "https://www.youtube.com/embed/YK8pMWJZgZU?si=mhWF2ZzxfketRUUq",
   // code: "import numpy as np\n\n# Get the current position of the chair\nchair_position, chair_orientation = get_position('chair')\n\n# Calculate the target position for the chair\ntarget_chair_position = np.array([chair_position[0]-1, chair_position[1], chair_position[2]])\n\n# Push the chair to the target position\npush_to_position('chair', target_chair_position)\n\n# Get the current position and size of the surfboard\nsurfboard_position, surfboard_orientation = get_position('surfboard')\nsurfboard_size = get_size('surfboard')\n\n# Get the size of the robot\nrobot_size = get_size('robot')\n\n# Calculate the target position for the robot to walk onto the surfboard\ntarget_robot_position = np.array([surfboard_position[0], surfboard_position[1], surfboard_size[2]+robot_size[2]/2])\n\n# Walk to the target position on the surfboard\nwalk_to_position(target_robot_position)",
   file_path: robotLeverCode,
   description: robotLeverDes,
@@ -50,7 +50,7 @@ const arm_scroll = {
 };
 
 const arm_hammer = {
-  video_url: "https://www.youtube.com/embed/3NEAVVOVCLs?si=HJbHlkRPaUHA8zVM",
+  video_url: "https://www.youtube.com/embed/0Y7iDKyXUmg?si=uFdp9OQePdR-ViJL",
   // code: "import numpy as np\n\n# Get the position of the hammer\nhammer_position = get_position('hammer')\n\n# Move the gripper to the hammer's position\ntarget_position = hammer_position + np.array([0.0, 0.0, get_size('hammer')[2]/2 - 0.03])\nmove_to_position(target_position)\n\n# Close the gripper to grasp the hammer\nclose_gripper()\n\n# Get the updated position of the milk\nmilk_position = get_position('milk')\n\n# Calculate the direction from the hammer to the milk\ndirection = (milk_position - hammer_position) / np.linalg.norm(milk_position - hammer_position)\n\n# Move the grasped hammer to make contact with the milk\ntarget_position = milk_position - 0.5 * get_size('hammer')[0] * direction\nmove_to_position(target_position)\n\n# Push the milk into the workspace\ntarget_position = [0.0, 0.0, milk_position[2]]\nmove_to_position(target_position)\n\n# Release the hammer\nopen_gripper()\n\n# Get the updated position of the milk\nmilk_position = get_position('milk')\n\n# Move the gripper to the milk's position\ntarget_position = milk_position + np.array([0.0, 0.0, get_size('milk')[2]/2 - 0.03])\nmove_to_position(target_position)\n\n# Close the gripper to grasp the milk\nclose_gripper()",
   file_path: armHammerCode,
   description: armHammerDes,

@@ -80,7 +80,7 @@ function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
         <Grid item container xs={12} justifyContent="center">
           <iframe
             width="410px"
-            height="280px"
+            height="276px"
             src={demo_video_url}
             title="YouTube video player"
             frameBorder="0"
@@ -94,7 +94,7 @@ function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
           fullWidth
           sx={{
             // width: "410px",
-            height: "280px",
+            height: "276px",
             overflowY: "auto",
             backgroundColor: "rgba(0,0,0,0.04)", // You can choose your own color
             border: "1px solid #ccc",
