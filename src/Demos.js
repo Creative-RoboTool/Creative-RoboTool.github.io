@@ -14,12 +14,18 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Link from "@mui/material/Link";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 // import Link from "@mui/material/Link";x
 // import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import DEMO_CODES from "./llmCodes";
 
-function DemoBlock(demo, displayDemo) {
+function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
   // get demo name from the args
   //   const demo_name = args["demo_name"];
   //   const demo_dict = DEMO_CODES[demo_name];
@@ -27,6 +33,7 @@ function DemoBlock(demo, displayDemo) {
   // const demo_code = demo["code"];
   const demo_file = demo["file_path"];
   const demo_name = demo["task_name"];
+  const demo_des_file = demo["description"];
 
   const [fileContent, setFileContent] = React.useState("");
   React.useEffect(() => {
@@ -51,7 +58,22 @@ function DemoBlock(demo, displayDemo) {
       marginTop="10px"
     >
       <Grid item xs={12}>
-        <Typography variant="h6">{demo_name}</Typography>
+        <Typography variant="h6">
+          {demo_name}
+          {"   "}
+          <Typography
+            variant="h6"
+            onClick={() => {
+              setOpen(true);
+              setDesFileName(demo_des_file);
+            }}
+            sx={{ textDecoration: "underline" }}
+            display="inline"
+            color="primary"
+          >
+            (description)
+          </Typography>
+        </Typography>
       </Grid>
       <Grid item xs={12} md={4} justifyContent="center">
         <Grid item container xs={12} justifyContent="center">
@@ -111,6 +133,24 @@ export default function Demo() {
   }
 
   let currentDemos = DEMO_CODES[displayDemo];
+
+  const [open, setOpen] = React.useState(false);
+  const [fileContent, setFileContent] = React.useState("");
+  const [desFile, setDesFileName] = React.useState("");
+
+  React.useEffect(() => {
+    // Define the file path here
+    const filePath = desFile;
+    fetch(filePath)
+      .then((response) => response.text())
+      .then((data) => {
+        setFileContent(data);
+      });
+  }, [desFile]);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <main>
@@ -173,9 +213,43 @@ export default function Demo() {
       </Container>
 
       <Container maxWidth="lg">
-        {currentDemos.map((demo) => DemoBlock(demo, displayDemo))}
+        {currentDemos.map((demo) =>
+          DemoBlock(demo, displayDemo, setOpen, setDesFileName)
+        )}
         {/* <DemoBlock demo_name={displayDemo} /> */}
       </Container>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        maxWidth="lg"
+        fullWidth
+        fullHeight
+      >
+        <DialogTitle>Task Description</DialogTitle>
+
+        <DialogContent
+          sx={{
+            height: "70vh",
+          }}
+        >
+          <DialogContentText
+            marginTop="20px"
+            component="pre"
+            sx={{
+              fontFamily: "Monospace",
+            }}
+            // style={{ wordWrap: "break-word" }}
+          >
+            {fileContent}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary" autoFocus>
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </main>
   );
 }

@@ -1,7 +1,7 @@
 {
   "name": "robotool",
   "version": "0.1.0",
-  "homepage": "https://robotool616226.github.io/RoboTool-Website/",
+  "homepage": "https://creative-robotool.github.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
