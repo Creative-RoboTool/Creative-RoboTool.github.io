@@ -30,7 +30,7 @@ export default function Abstract() {
   return (
     <main>
       <Container maxWidth="md">
-        <Box marginTop="30px">
+        <Box marginTop="50px">
           <Typography variant="h4" align="center">
             Abstract
           </Typography>

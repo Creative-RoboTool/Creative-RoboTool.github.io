@@ -60,7 +60,7 @@ function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
       <Grid item xs={12}>
         <Typography variant="h6">
           {demo_name}
-          {"   "}
+          {"   ["}
           <Typography
             variant="h6"
             onClick={() => {
@@ -71,8 +71,9 @@ function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
             display="inline"
             color="primary"
           >
-            (description)
+            description
           </Typography>
+          {"]"}
         </Typography>
       </Grid>
       <Grid item xs={12} md={4} justifyContent="center">
@@ -166,7 +167,7 @@ export default function Demo() {
         <Grid
           container
           spacing={2}
-          marginTop="20px"
+          marginTop="50px"
           justifyContent="space-evenly"
         >
           <Grid item xs={12}>
