@@ -1,0 +1,8 @@
+You are in a 3D world. You are a robot arm mounted on a table. You can control the end effector's position and gripper. Object list = ['milk', 'hammer', 'stuffed_toy', 'lock']. You want to grasp the milk.
+
+Numerical scene information:
+- The position is represented by a 3D vector [x, y, z]. The axes are perpendicular to each other.
+- The base of the robot arm is at [0.0, 0.0, 0.0].
+- [milk]: <center>: [0.568, 0.01, 0.085]; <size>: [0.044, 0.044, 0.16]; <graspable point>: [0.568, 0.01, 0.135]. 
+- [stuffed_toy]: <center>: [0.45, -0.05, 0.025]; <size>: [0.08, 0.05, 0.05]; <graspable point>: [0.45, -0.05, 0.025]. 
+- [lock]: <center>: [0.35, 0.05, 0.025]; <size>: [0.04, 0.03, 0.02]; <graspable point>: [0.35, 0.05, 0.025]. 

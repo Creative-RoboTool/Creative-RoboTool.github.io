@@ -1,0 +1,54 @@
+import numpy as np
+
+# Get the current position of the soft cushion
+soft_cushion_pos = get_position('soft_cushion')
+
+# Get the current position of the sofa
+sofa_pos = get_position('sofa')
+
+# Get the size of the soft cushion and the sofa
+soft_cushion_size = get_size('soft_cushion')
+sofa_size = get_size('sofa')
+
+# Calculate the target position for the soft cushion
+target_soft_cushion_pos = [sofa_pos[0] + sofa_size[0]/2 + soft_cushion_size[0]/2, sofa_pos[1], soft_cushion_pos[2]]
+target_soft_cushion_pos = [sofa_pos[0], sofa_pos[1] - sofa_size[1]/2 - soft_cushion_size[1]/2, soft_cushion_pos[2]]
+
+# Push the soft cushion to the target position
+push_to_position('soft_cushion', target_soft_cushion_pos)
+
+# Get the updated position of the soft cushion
+soft_cushion_pos = get_position('soft_cushion')
+
+# Get the current position of box_1
+box_1_pos = get_position('box_1')
+
+# Walk to box_1
+walk_to_position([box_1_pos[0], box_1_pos[1], 0])
+
+# Get the current position of box_2
+box_2_pos = get_position('box_2')
+
+# Walk to box_2
+walk_to_position([box_2_pos[0], box_2_pos[1], 0])
+
+# Get the updated position of the sofa
+sofa_pos = get_position('sofa')
+
+# Walk to the sofa
+walk_to_position([sofa_pos[0], sofa_pos[1], 0])
+
+# Get the current position of the glass vase
+glass_vase_pos = get_position('glass_vase')
+
+# Get the size of the glass vase
+glass_vase_size = get_size('glass_vase')
+
+# Calculate the target position for the glass vase
+target_glass_vase_pos = [soft_cushion_pos[0], soft_cushion_pos[1], soft_cushion_pos[2] + soft_cushion_size[2]/2 + glass_vase_size[2]/2]
+
+# Push the glass vase to the target position
+push_to_position('glass_vase', target_glass_vase_pos)
+
+# Get the updated position of the glass vase
+glass_vase_pos = get_position('glass_vase')

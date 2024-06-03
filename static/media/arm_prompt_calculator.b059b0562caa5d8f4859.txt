@@ -1,0 +1,30 @@
+This part is to calculate the 3D target position of the gripper.
+
+Common Rules:
+* Calculate step by step and show the calculation process between <start of description> and <end of description>.
+* Return the 3D position between <start of answer> and <end of answer>.
+* You must not assume any position and directly query the updated position of the objects.
+* You must only query the object name provided in object list when using 'get_center' and 'get_graspable_point'.
+* The "open_gripper" and "close_gripper" do not need target positions. Return a space character between <start of answer> and <end of answer>.
+* To bring an [OBJECT] into the workspace, the 3D target position should be [0.0, 0.0, object_size[2]/2].
+
+Rule 1:
+<Current Step>: Use the 'move_to_position' skill to move the [OBJECT1] to [OBJECT2].
+Answer: 
+<start of description>
+* The [OBJECT1] is in hand. The target position should be the center of the [OBJECT2].
+<end of description>
+<start of answer>
+The 3D target position is [OBJECT2]'s center position.
+<end of answer>
+Rule 2:
+<Current Step>: Use the 'move_to_position' skill to push the [OBJECT] into the workspace.
+Answer: 
+<start of description>
+To push an [OBJECT] into the workspace, the 3D target position should be [0.0, 0.0, object_size[2]/2].
+<end of description>
+<start of answer>
+The 3D target position is [0.0, 0.0, object_size[2]/2].
+<end of answer>
+
+In the following, you will see the plan and must follow the rules.

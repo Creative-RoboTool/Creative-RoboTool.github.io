@@ -1,0 +1,23 @@
+# import numpy because we are using it below
+import numpy as np  
+
+# Use the 'get_graspable_point' to get the magnetic_cube1's graspable point. 
+magnetic_cube1_graspable_point = get_graspable_point('magnetic_cube1')
+
+# Use the 'move_to_position' to move the gripper close to the graspable point of magnetic_cube1. 
+move_to_position(magnetic_cube1_graspable_point)
+
+# Use the 'close_gripper' to grasp the magnetic_cube1. 
+close_gripper()
+
+# Use the 'move_to_position' to move the grasped magnetic_cube1 to make contact with magnetic_cube2. 
+magnetic_cube2_center = get_center('magnetic_cube2')
+move_to_position(magnetic_cube2_center)
+
+# Use the 'move_to_position' to move the attached magnetic_cube1 and magnetic_cube2 to make contact with magnetic_cube3. 
+magnetic_cube3_center = get_center('magnetic_cube3')
+move_to_position(magnetic_cube3_center)
+
+# Use the 'move_to_position' to move the attached magnetic cubes to press the button. 
+button_center = get_center('button')
+move_to_position(button_center)

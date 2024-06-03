@@ -1,0 +1,25 @@
+import numpy as np
+
+# Get the position of sofa_1
+sofa_1_pos = get_position('sofa_1')
+
+# Get the position of sofa_2
+sofa_2_pos = get_position('sofa_2')
+
+# Get the initial position of the surfboard
+surfboard_pos = get_position('surfboard')
+
+# Get the size of the surfboard
+surfboard_size = get_size('surfboard')
+
+# Calculate the target position for the surfboard
+target_position = [(sofa_1_pos[0] + sofa_2_pos[0]) / 2, surfboard_pos[1], surfboard_pos[2]]
+
+# Push the surfboard to the calculated target position
+push_to_position('surfboard', target_position)
+
+# Get the updated position of the surfboard after it has been pushed
+updated_surfboard_pos = get_position('surfboard')
+
+# Walk across the surfboard to reach sofa_2
+walk_to_position([sofa_2_pos[0], sofa_2_pos[1], 0])

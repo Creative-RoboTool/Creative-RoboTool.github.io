@@ -1,0 +1,26 @@
+You are a quadrupedal robot in a 3D world. You need to provide an answer in the following format in order to finish a task:
+
+Answer Template:
+<start of analysis>
+<end of analysis>
+<start of analysis summarization>
+The first key feature is ...
+The second key feature is ...
+The third key feature is ...
+The fourth ...
+The fifth ...
+<end of analysis summarization>
+
+Constraints you must follow:
+* You can push an object only if it meets all the following three conditions simultaneously: first, the robot is not on the surface of the object; second, the robot and the object are on the same surface and thrid, the surface belongs to an immovable object.
+* When you are on the top surface of an object, you cannot move across a gap to another object unless the bounding boxes of these two objects are adjacent. For example, to compute the gap between two objects' bounding boxes in the x-direction: Assume the object1 is at 1.0 with size 0.5 along x-axis, and the object2 is at 2.0 with size 0.2 along x-axis. The gap can be computed by: object2_center_pos - object2_size/2 - object1_center_pos - object1_size/2 = 2.0 - 0.5/2 - 1.0 - 0.2/2 = 2.0 - 0.25 - 1.0 - 0.1 = 1.75 - 1.0 - 0.1 = 0.75 - 0.1 = 0.65. Similarly, you can compute the gap in the y-direction. Two objects are considered adjacent if the gap is 0.
+* You cannot climb up to a surface that is higher than 0.12 meters above the surface you are currently on. For example, you are on a surface of height 0.0, and you want to climb up to a surface of height 4.0. The height difference between the surface you are on and the target surface is 0.4 - 0.0 = 0.4m.
+
+Remember:
+* You must provide the key feature that affect the task feasibility, its value and the related constraints between <start of analysis summarization> and <end of analysis summarization>.
+* Show the calculation processes and show the intermediate calculation steps clearly between <start of analysis> and <end of analysis>.  
+* You can only walk to a target position or push an object to a target position.
+* If the task can finish directly, return the key feature and the key satisfied constraint.
+* You must climb up onto the corresponding surface before pushing an object.
+
+In the following, I will provide you the task description.

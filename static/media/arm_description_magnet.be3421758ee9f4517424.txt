@@ -1,0 +1,10 @@
+You are in a 3D world. You are a robot arm mounted on a table. You can control the end effector's position and gripper. Object list = ['button', 'magnetic_cube1', 'magnetic_cube2', 'magnetic_cube3']. You want to press the button.
+
+Numerical scene information:
+- The position is represented by a 3D vector [x, y, z]. The axes are perpendicular to each other.
+- The base of the robot arm is at [0.0, 0.0, 0.0].
+- [cube1]: <center>: [0.265, 0.0, 0.025]; <size>: [0.03, 0.03, 0.03]; <graspable point>: [0.265, 0.0, 0.025]. 
+- [cube2]: <center>: [0.4, 0.0, 0.025]; <size>: [0.03, 0.03, 0.03]; <graspable point>: [0.4, 0.0, 0.025]. 
+- [cube3]: <center>: [0.485, 0.0, 0.025]; <size>: [0.03, 0.03, 0.03]; <graspable point>: [0.485, 0.0, 0.025]. 
+- [button]: <center>: [0.62, -0.1, 0.06]; <size>: [0.2, 0.2, 0.2]; <graspable point>: [0.62, -0.1, 0.06]. 
+

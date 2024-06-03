@@ -1,0 +1,50 @@
+# import numpy because we are using it below
+import numpy as np  
+
+# following the detailed plan
+
+# Use the 'get_graspable_point' skill to get the stick's graspable point
+stick_graspable_point = get_graspable_point('stick')
+
+# Use the 'move_to_position' skill to move the gripper to the stick's graspable point
+move_to_position(stick_graspable_point)
+
+# Use the 'close_gripper' skill to grasp the stick
+close_gripper()
+
+# Use the 'get_center' skill to get the can's center position
+can_center_position = get_center('can')
+
+# Use the 'move_to_position' skill to move the grasped stick to make contact with the can
+move_to_position(can_center_position)
+
+# Use the 'move_to_position' skill to push the can towards the strip of paper until the can's center is as close to [0.0, 0.0] as possible
+strip_of_paper_center_position = get_center('strip_of_paper')
+move_to_position(strip_of_paper_center_position)
+
+# Use the 'open_gripper' skill to release the stick
+open_gripper()
+
+# Use the 'get_graspable_point' skill to get the strip of paper's graspable point
+strip_of_paper_graspable_point = get_graspable_point('strip_of_paper')
+
+# Use the 'move_to_position' skill to move the gripper to the strip of paper's graspable point
+move_to_position(strip_of_paper_graspable_point)
+
+# Use the 'close_gripper' skill to grasp the strip of paper
+close_gripper()
+
+# Use the 'move_to_position' skill to drag the strip of paper in the negative x direction, bringing the can within the robot arm's reach
+move_to_position(np.array([0.0, 0.2, 0.05]))
+
+# Use the 'open_gripper' skill to release the strip of paper
+open_gripper()
+
+# Use the 'get_graspable_point' skill to get the can's updated graspable point
+can_graspable_point = get_graspable_point('can')
+
+# Use the 'move_to_position' skill to move the gripper to the can's graspable point
+move_to_position(can_graspable_point)
+
+# Use the 'close_gripper' skill to grasp the can
+close_gripper()

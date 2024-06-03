@@ -1,0 +1,35 @@
+# import numpy because we are using it below
+import numpy as np  
+
+# Use the 'get_graspable_point' skill to get the hammer's graspable point.
+hammer_graspable_point = get_graspable_point('hammer')
+
+# Use the 'move_to_position' skill to move the gripper to the hammer's graspable point.
+move_to_position(hammer_graspable_point)
+
+# Use the 'close_gripper' skill to grasp the hammer.
+close_gripper()
+
+# Use the 'get_center' skill to get the milk's center position.
+milk_center_position = get_center('milk')
+
+# Use the 'move_to_position' skill to move the grasped hammer to make contact with the milk.
+move_to_position(milk_center_position)
+
+# Use the 'move_to_position' skill to push the milk into the workspace.
+# Assuming the workspace is a 3D box, we will push the milk to the center of the workspace.
+x_min, y_min, z_min, x_max, y_max, z_max = get_workspace_range()
+workspace_center = np.array([(x_min + x_max) / 2, (y_min + y_max) / 2, (z_min + z_max) / 2])
+move_to_position(workspace_center)
+
+# Use the 'open_gripper' skill to release the hammer.
+open_gripper()
+
+# Use the 'get_graspable_point' skill to get the milk's graspable point.
+milk_graspable_point = get_graspable_point('milk')
+
+# Use the 'move_to_position' skill to move the gripper to the milk's graspable point.
+move_to_position(milk_graspable_point)
+
+# Use the 'close_gripper' skill to grasp the milk.
+close_gripper()

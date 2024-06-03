@@ -1,0 +1,8 @@
+You are a quadrupedal robot on the ground in a 3D world. The ground has a height of 0.0m. Your x-y position is [0.0, 0.0]. There is a sofa, a box_1 and a box_2 on the ground. Object list = ['sofa', 'box_1', 'box_2']. You want to get on top of sofa.
+
+Numerical scene information:
+* Each objects' center is represented by a 3D vector [x, y, z]. The axes are perpendicular to each other. z axis is perpendicular to the ground surface and pointing upwards.
+* Each object occupies a bounding box with size represented as <size>: [length, width, height].
+* [sofa]: <center>: [3.0, 0.2, 0.17]; <size>: [0.9, 1.5, 0.34]; <movable>: False; <on_top_of>: ground; <in_contact_with>: box_2.
+* [box_1]: <center>: [1.0, 0.0, 0.06]; <size>: [0.4, 0.6, 0.12]; <movable>: True; <on_top_of>: ground; <in_contact_with>: none. 
+* [box_2]: <center>: [2.35, 0.65, 0.12]; <size>: [0.4, 0.6, 0.24]; <movable>: True; <on_top_of>: ground; <in_contact_with>: sofa.
