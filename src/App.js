@@ -18,12 +18,12 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { blue } from "@mui/material/colors";
-import bgImage from "./imgs/background.png";
 
-import Demo from "./Demos";
-import Intro from "./Intro";
-import Abstract from "./Abstract";
-import Prompts from "./Prompts";
+import Title from "./components/Title";
+import Demo from "./components/Demos";
+import Intro from "./components/Intro";
+import Abstract from "./components/Abstract";
+import Prompts from "./components/Prompts";
 import "./App.css";
 
 function Copyright() {
@@ -70,50 +70,8 @@ export default function App() {
           </Typography>
         </Toolbar>
       </AppBar> */}
-      <main>
-        {/* Hero unit */}
 
-        <Box
-          sx={{
-            // bgcolor: blueGrey[50],
-            // bgImage: { bgImage },
-            pt: 8,
-            pb: 6,
-          }}
-          className="background"
-          // style={{
-          //   backgroundImage: `url(${bgImage})`,
-          //   backgroundSize: "cover", // Cover the viewport
-          //   backgroundPosition: "center", // Center the image
-          //   height: "300px",
-          //   filter: "blur(8px)",
-          // }}
-        >
-          <Container maxWidth="lg">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-              sx={{ color: "white" }}
-              style={{ fontWeight: "bold" }}
-            >
-              RoboTool
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              sx={{ color: "white" }}
-              style={{ fontWeight: "bold" }}
-              paragraph
-            >
-              Creative Robot Tool Use with Large Language Models
-            </Typography>
-          </Container>
-        </Box>
-      </main>
-
+      <Title />
       <Intro />
       <Abstract />
       <Demo />

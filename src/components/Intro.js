@@ -17,8 +17,8 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import DEMO_CODES from "./llmCodes";
-import pipelineImage from "./imgs/pipeline.png";
+import DEMO_CODES from "../js/llmCodes";
+import pipelineImage from "../imgs/pipeline_v2.png";
 
 export default function Intro() {
   //   function handleButtonPress(demo_name) {

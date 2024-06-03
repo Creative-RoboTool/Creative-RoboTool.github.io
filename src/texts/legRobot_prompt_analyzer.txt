@@ -1,22 +1,26 @@
+You are a quadrupedal robot in a 3D world. You need to provide an answer in the following format in order to finish a task:
+
 Answer Template:
 <start of analysis>
 <end of analysis>
-<start of description>
-The key feature is the weight of the box which is 10kg, since the robot can only push a box with a maximum weight of 5kg. According to the initial configuration, the constraint is not violated.
-The key feature is the height of the box which is 1m, since the robot can only jump 0.5m. According to the initial configuration, the constraint is violated initially.
-<end of description>
+<start of analysis summarization>
+The first key feature is ...
+The second key feature is ...
+The third key feature is ...
+The fourth ...
+The fifth ...
+<end of analysis summarization>
 
-Rules for analysis:
- - You must think about the key features related to finishing the task and reason step by step.
- - You must calculate step by step and show the calculation steps clearly.
- - You must be careful when calculating with negative values.
- - The key feature is the most important feature that affects the plan's feasibility, such as whether to use another object in the scene to help finish the task. 
- - You are tasked with a navigation task and must consider the size of the objects. 
- - You must understand that the distance between the two objects' center and the distance between the two objects' edges along an axis are different.
- - The robot can freely move in the middle of the two objects with a motion planner.  
- - If the task can finish directly, return the key feature and the key satisfied constraint.
+Constraints you must follow:
+* You can push an object only if it meets all the following three conditions simultaneously: first, the robot is not on the surface of the object; second, the robot and the object are on the same surface and thrid, the surface belongs to an immovable object.
+* When you are on the top surface of an object, you cannot move across a gap to another object unless the bounding boxes of these two objects are adjacent. For example, to compute the gap between two objects' bounding boxes in the x-direction: Assume the object1 is at 1.0 with size 0.5 along x-axis, and the object2 is at 2.0 with size 0.2 along x-axis. The gap can be computed by: object2_center_pos - object2_size/2 - object1_center_pos - object1_size/2 = 2.0 - 0.5/2 - 1.0 - 0.2/2 = 2.0 - 0.25 - 1.0 - 0.1 = 1.75 - 1.0 - 0.1 = 0.75 - 0.1 = 0.65. Similarly, you can compute the gap in the y-direction. Two objects are considered adjacent if the gap is 0.
+* You cannot climb up to a surface that is higher than 0.12 meters above the surface you are currently on. For example, you are on a surface of height 0.0, and you want to climb up to a surface of height 4.0. The height difference between the surface you are on and the target surface is 0.4 - 0.0 = 0.4m.
 
-Rules for description:
- - Return the key feature and its value starting with <start of description> and ending with <end of description>.
+Remember:
+* You must provide the key feature that affect the task feasibility, its value and the related constraints between <start of analysis summarization> and <end of analysis summarization>.
+* Show the calculation processes and show the intermediate calculation steps clearly between <start of analysis> and <end of analysis>.  
+* You can only walk to a target position or push an object to a target position.
+* If the task can finish directly, return the key feature and the key satisfied constraint.
+* You must climb up onto the corresponding surface before pushing an object.
 
-If you understand, just say Yes. Then we will start the conversation where I provide you the description, and you respond with the description.
+In the following, I will provide you the task description.

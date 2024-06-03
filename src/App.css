@@ -59,7 +59,7 @@
 
  .background {
   position: relative;
-  height: 300px;
+  /* minheight: 300px; */
 }
 
 .background::before {
@@ -87,3 +87,29 @@ pre {
 /* .content {
   position: relative;
 } */
+
+.code-normal {
+  color:black;
+  font-family: Monospace;
+  /* font-size: 0.8em; */
+}
+
+.code-function {
+  color:rgb(119, 167, 251);
+  font-family: Monospace;
+  font-weight: bold;
+  /* font-size: 0.8em; */
+}
+
+.code-comment {
+  color:rgb(84, 130, 53);
+  font-family: Monospace;
+  font-weight: bold;
+  /* font-size: 0.8em; */
+}
+
+.prompt {
+  font-family: Monospace;
+  font-size: 0.8em;
+  font-weight: bold;
+}

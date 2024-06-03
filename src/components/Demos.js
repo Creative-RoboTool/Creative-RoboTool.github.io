@@ -23,13 +23,19 @@ import DialogTitle from "@mui/material/DialogTitle";
 // import Link from "@mui/material/Link";x
 // import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import DEMO_CODES from "./llmCodes";
+import DEMO_CODES from "../js/llmCodes";
+import PythonCodeHighlighter from "../js/codeFormater";
 
 function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
   // get demo name from the args
   //   const demo_name = args["demo_name"];
   //   const demo_dict = DEMO_CODES[demo_name];
-  const demo_video_url = demo["video_url"];
+  const video_id = demo["video_id"];
+  const demo_video_url =
+    "https://www.youtube.com/embed/" +
+    video_id +
+    "?autoplay=1&loop=1&mute=1&playlist=" +
+    video_id;
   // const demo_code = demo["code"];
   const demo_file = demo["file_path"];
   const demo_name = demo["task_name"];
@@ -106,7 +112,7 @@ function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
             //   overflowX: "auto",
           }}
         >
-          <Typography
+          {/* <Typography
             variant="body2"
             component="pre"
             fullWidth
@@ -119,7 +125,8 @@ function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
             }}
           >
             {fileContent}
-          </Typography>
+          </Typography> */}
+          <PythonCodeHighlighter code={fileContent} />
         </Box>
       </Grid>
     </Grid>
@@ -234,15 +241,10 @@ export default function Demo() {
             height: "70vh",
           }}
         >
-          <DialogContentText
-            marginTop="20px"
-            component="pre"
-            sx={{
-              fontFamily: "Monospace",
-            }}
-            // style={{ wordWrap: "break-word" }}
-          >
-            {fileContent}
+          <DialogContentText marginTop="20px">
+            <Typography className="prompt" component="pre">
+              {fileContent}
+            </Typography>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

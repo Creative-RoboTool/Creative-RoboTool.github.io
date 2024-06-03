@@ -1,0 +1,10 @@
+You are a quadrupedal robot on the ground. Your x-y position is [0.0, 0.0]. Object list = ['soft_cushion', 'glass_vase', 'sofa', 'box_1', 'box_2']. [glass_vase] will break if it falls directly to a hard surface from a height of more than 0.3m. The robot wants to move the [glass_vase] to the ground safely without breaking [glass_vase].
+
+Numerical scene information:
+* Each objects' center is represented by a 3D vector [x, y, z]. The axes are perpendicular to each other. z axis is perpendicular to the ground surface and pointing upwards.
+* Each object occupies a bounding box with size represented as <size>: [length, width, height].
+* [sofa]: <center>: [3.0, 0.2, 0.17]; <size>: [0.9, 1.5, 0.34]; <movable>: False; <on_top_of>: ground; <in_contact_with>: box_2.
+* [box_1]: <center>: [1.95, 0.65, 0.06]; <size>: [0.4, 0.6, 0.12]; <movable>: False; <on_top_of>: ground; <in_contact_with>: box_2. 
+* [box_2]: <center>: [2.35, 0.65, 0.12]; <size>: [0.4, 0.6, 0.24]; <movable>: False; <on_top_of>: ground; <in_contact_with>: sofa.
+* [soft_cushion]: <center>: [1.0, 0.3, 0.8]; <size>: [0.5, 0.5, 0.16]; <movable>: True; <on_top_of>: ground; <in_contact_with>: none.
+* [glass_vase]: <center>: [3.0, 0.8, 0.39]; <size>: [0.3, 0.1, 0.1]; <movable>: True; <on_top_of>: sofa; <in_contact_with>: none.

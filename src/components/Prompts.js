@@ -22,19 +22,19 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 // import ROBOTOOL_PROMPTS from "./llmPrompts";
-import iconAnalyzer from "./imgs/icon_analyzer.png";
-import iconCalculator from "./imgs/icon_calculator.png";
-import iconCoder from "./imgs/icon_coder.png";
-import iconPlanner from "./imgs/icon_planner.png";
+import iconAnalyzer from "../imgs/icon_analyzer.png";
+import iconCalculator from "../imgs/icon_calculator.png";
+import iconCoder from "../imgs/icon_coder.png";
+import iconPlanner from "../imgs/icon_planner.png";
 
-import armAnalyzerPrompt from "./texts/arm_prompt_analyzer.txt";
-import armPlannerPrompt from "./texts/arm_prompt_planner.txt";
-import armCalculatorPrompt from "./texts/arm_prompt_calculator.txt";
-import armCoderPrompt from "./texts/arm_prompt_coder.txt";
-import robotAnalyzerPrompt from "./texts/legRobot_prompt_analyzer.txt";
-import robotPlannerPrompt from "./texts/legRobot_prompt_planner.txt";
-import robotCalculatorPrompt from "./texts/legRobot_prompt_calculator.txt";
-import robotCoderPrompt from "./texts/legRobot_prompt_coder.txt";
+import armAnalyzerPrompt from "../texts/arm_prompt_analyzer.txt";
+import armPlannerPrompt from "../texts/arm_prompt_planner.txt";
+import armCalculatorPrompt from "../texts/arm_prompt_calculator.txt";
+import armCoderPrompt from "../texts/arm_prompt_coder.txt";
+import robotAnalyzerPrompt from "../texts/legRobot_prompt_analyzer.txt";
+import robotPlannerPrompt from "../texts/legRobot_prompt_planner.txt";
+import robotCalculatorPrompt from "../texts/legRobot_prompt_calculator.txt";
+import robotCoderPrompt from "../texts/legRobot_prompt_coder.txt";
 
 const ROBOTOOL_PROMPTS = {
   arm: {
@@ -163,15 +163,10 @@ export default function Prompts() {
             height: "70vh",
           }}
         >
-          <DialogContentText
-            marginTop="20px"
-            component="pre"
-            sx={{
-              fontFamily: "Monospace",
-            }}
-            // style={{ wordWrap: "break-word" }}
-          >
-            {fileContent}
+          <DialogContentText marginTop="20px">
+            <Typography className="prompt" component="pre">
+              {fileContent}
+            </Typography>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

@@ -17,9 +17,6 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import DEMO_CODES from "./llmCodes";
-import pipelineImage from "./imgs/pipeline.png";
-
 export default function Abstract() {
   //   function handleButtonPress(demo_name) {
   //     setDisplayDemo(demo_name);
@@ -29,24 +26,23 @@ export default function Abstract() {
 
   return (
     <main>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Box marginTop="50px">
           <Typography variant="h4" align="center">
             Abstract
           </Typography>
           <Typography
             marginTop="10px"
-            variant="body2"
             align="justify"
             sx={{
               fontFamily: "sans-serif",
               fontWeight: 400,
-              fontSize: "1.2em",
+              fontSize: "1.0em",
               color: "#4a4a4a",
             }}
             // style={{ lineHeight: "1.5" }}
           >
-            Tool use is a hallmark of advanced intelligence, exemplified in both
+            {/* Tool use is a hallmark of advanced intelligence, exemplified in both
             animal behavior and robotic capabilities. This paper investigates
             the feasibility of imbuing robots with the ability to creatively use
             tools in tasks that involve long-term planning and implicit physical
@@ -68,7 +64,40 @@ export default function Abstract() {
             complex robotics tasks. Through extensive experimentation, we
             validate that our system is proficient in handling tasks that would
             otherwise be infeasible without the creative use of tools, thereby
-            expanding the capabilities of robotic systems.
+            expanding the capabilities of robotic systems. */}
+            Creative tool use, a hallmark of intelligence characterized by
+            utilizing tools beyond their intended functionality, presents
+            significant challenges and opportunities in robotics. This study
+            introduces RoboTool, a system developed to enable robots to employ
+            creative tool use through the integration of large language models.
+            RoboTool accepts natural language instructions and outputs
+            executable code for controlling robots. By incorporating a modular
+            design inspired by neurology, RoboTool operates in a manner akin to
+            the specialized functions of the cerebral cortex. RoboTool
+            incorporates four pivotal components: (i) an{" "}
+            <span style={{ color: "green", fontWeight: "bold" }}>Analyzer</span>{" "}
+            that interprets natural language to discern key task-related
+            concepts, (ii) a{" "}
+            <span style={{ color: "red", fontWeight: "bold" }}>Planner</span>{" "}
+            that generates comprehensive strategies based on the language input
+            and key concepts, (iii) a{" "}
+            <span style={{ color: "orange", fontWeight: "bold" }}>
+              Calculator
+            </span>{" "}
+            that computes parameters for each skill, and (iv) a{" "}
+            <span style={{ color: "blue", fontWeight: "bold" }}>Coder</span>{" "}
+            that translates these plans into executable Python code. We propose
+            a novel benchmark to evaluate RoboTool across diverse robotic
+            configurations, including a robotic arm and a quadrupedal robot. Our
+            results show that RoboTool can not only comprehend implicit physical
+            constraints and environmental factors but also demonstrate creative
+            tool use. Unlike traditional Task and Motion Planning methods that
+            rely on explicit optimization and are confined to formal logic, our
+            LLM-based system offers a more flexible, efficient, and
+            user-friendly solution for complex robotics tasks. Through extensive
+            analysis, we validate that RoboTool is proficient in handling tasks
+            that would otherwise be infeasible without the creative use of
+            tools, thereby expanding the capabilities of robotic systems.
           </Typography>
         </Box>
       </Container>
