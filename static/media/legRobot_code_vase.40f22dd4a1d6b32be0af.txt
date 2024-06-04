@@ -11,7 +11,6 @@ soft_cushion_size = get_size('soft_cushion')
 sofa_size = get_size('sofa')
 
 # Calculate the target position for the soft cushion
-target_soft_cushion_pos = [sofa_pos[0] + sofa_size[0]/2 + soft_cushion_size[0]/2, sofa_pos[1], soft_cushion_pos[2]]
 target_soft_cushion_pos = [sofa_pos[0], sofa_pos[1] - sofa_size[1]/2 - soft_cushion_size[1]/2, soft_cushion_pos[2]]
 
 # Push the soft cushion to the target position
