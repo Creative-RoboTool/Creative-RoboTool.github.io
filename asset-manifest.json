@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.f14c58b5.css",
-    "main.js": "/static/js/main.53b90c94.js",
+    "main.js": "/static/js/main.b1b36694.js",
     "static/js/787.b5eb48a5.chunk.js": "/static/js/787.b5eb48a5.chunk.js",
-    "static/media/pipeline_v2.png": "/static/media/pipeline_v2.a3877ef8687975201e1d.png",
     "static/media/title_background.png": "/static/media/title_background.a705c1d3c8d216a940dc.png",
     "static/media/icon_RoboTool.png": "/static/media/icon_RoboTool.66c0a6988d7a9588cb48.png",
     "static/media/legRobot_prompt_planner.txt": "/static/media/legRobot_prompt_planner.76383a1791710381c902.txt",
@@ -16,8 +15,8 @@
     "static/media/legRobot_prompt_coder.txt": "/static/media/legRobot_prompt_coder.9b97f20f9b8b8423823f.txt",
     "static/media/arm_prompt_calculator.txt": "/static/media/arm_prompt_calculator.b059b0562caa5d8f4859.txt",
     "static/media/legRobot_code_box.txt": "/static/media/legRobot_code_box.1bca8ec4721e15bd865f.txt",
-    "static/media/arm_code_hammer.txt": "/static/media/arm_code_hammer.cbed6a88584127779c17.txt",
     "static/media/legRobot_description_vase.txt": "/static/media/legRobot_description_vase.12144bd32283340860b5.txt",
+    "static/media/arm_code_hammer.txt": "/static/media/arm_code_hammer.2895007ecee0ca802645.txt",
     "static/media/arm_code_magnet.txt": "/static/media/arm_code_magnet.1f4da0b1263035f45c9c.txt",
     "static/media/legRobot_description_box.txt": "/static/media/legRobot_description_box.309d3304b86c6ab3645b.txt",
     "static/media/legRobot_description_surfboard.txt": "/static/media/legRobot_description_surfboard.a1c051eb5ff4bcdeb71a.txt",
@@ -27,12 +26,13 @@
     "static/media/arm_prompt_analyzer.txt": "/static/media/arm_prompt_analyzer.9e77d8f17d2c1ccb1b96.txt",
     "static/media/arm_description_scroll.txt": "/static/media/arm_description_scroll.34841404ff9de6605e35.txt",
     "index.html": "/index.html",
+    "static/media/bibtex.txt": "/static/media/bibtex.4cf59bd92e1ed4a3cdc2.txt",
     "main.f14c58b5.css.map": "/static/css/main.f14c58b5.css.map",
-    "main.53b90c94.js.map": "/static/js/main.53b90c94.js.map",
+    "main.b1b36694.js.map": "/static/js/main.b1b36694.js.map",
     "787.b5eb48a5.chunk.js.map": "/static/js/787.b5eb48a5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f14c58b5.css",
-    "static/js/main.53b90c94.js"
+    "static/js/main.b1b36694.js"
   ]
 }
