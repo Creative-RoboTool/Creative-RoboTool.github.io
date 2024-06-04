@@ -1,20 +1,9 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
-import { ButtonGroup } from "@mui/material";
-import CameraIcon from "@mui/icons-material/PhotoCamera";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -24,37 +13,53 @@ import DialogTitle from "@mui/material/DialogTitle";
 // import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import DEMO_CODES from "../js/llmCodes";
-import PythonCodeHighlighter from "../js/codeFormater";
+import PythonCodeHighlighter from "../js/pythonCodeFormater";
 
 function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
   // get demo name from the args
   //   const demo_name = args["demo_name"];
   //   const demo_dict = DEMO_CODES[demo_name];
-  const video_id = demo["video_id"];
-  const demo_video_url =
-    "https://www.youtube.com/embed/" +
-    video_id +
-    "?autoplay=1&loop=1&mute=1&playlist=" +
-    video_id;
+  // const video_id = demo["video_id"];
+  // const demo_video_url =
+  //   "https://www.youtube.com/embed/" +
+  //   video_id +
+  //   "?autoplay=1&loop=1&mute=1&controls=0&playlist=" +
+  //   video_id;
   // const demo_code = demo["code"];
+  // const demo_video_path = process.env.PUBLIC_URL + demo["video_path"];
+  const demo_video_path = demo["video_path"];
   const demo_file = demo["file_path"];
   const demo_name = demo["task_name"];
   const demo_des_file = demo["description"];
 
+  const [videoSrc, setVideoSrc] = React.useState("/videos/arm_hammer.mp4");
   const [fileContent, setFileContent] = React.useState("");
+
   React.useEffect(() => {
-    // Define the file path here
-    const filePath = demo_file;
-    fetch(filePath)
-      .then((response) => response.text())
-      .then((data) => {
-        setFileContent(data);
-      });
-  }, [displayDemo]);
+    if (demo_file) {
+      const filePath = demo_file;
+      fetch(filePath)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `Network response was not ok ${response.statusText}`
+            );
+          }
+          return response.text();
+        })
+        .then((data) => {
+          setFileContent(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching the file:", error);
+        });
+    }
 
-  // get the demo video link and LLM code from the dictionary
+    if (demo_video_path) {
+      setVideoSrc(process.env.PUBLIC_URL + demo_video_path);
+    }
+  }, [demo_file, displayDemo]);
 
-  //   console.log(11111, demo_name, demo_video_url);
   return (
     <Grid
       container
@@ -82,25 +87,30 @@ function DemoBlock(demo, displayDemo, setOpen, setDesFileName) {
           {"]"}
         </Typography>
       </Grid>
-      <Grid item xs={12} md={4} justifyContent="center">
+      <Grid item xs={12} md={6} justifyContent="center">
         <Grid item container xs={12} justifyContent="center">
-          <iframe
-            width="410px"
-            height="276px"
-            src={demo_video_url}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+          <Box>
+            <video
+              key={videoSrc}
+              width="100%"
+              autoPlay
+              muted
+              loop
+              preload="metadata"
+              playsInline
+            >
+              <source src={videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Box>
         </Grid>
       </Grid>
-      <Grid item xs={12} md={8} justifyContent="center">
+      <Grid item xs={12} md={6} justifyContent="center">
         <Box
           fullWidth
           sx={{
             // width: "410px",
-            height: "276px",
+            height: "420px",
             overflowY: "auto",
             backgroundColor: "rgba(0,0,0,0.04)", // You can choose your own color
             border: "1px solid #ccc",

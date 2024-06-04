@@ -18,48 +18,54 @@ import robotVaseDes from "../texts/legRobot_description_vase.txt";
 // import robotBox from "./texts/"
 
 const legRobot_box = {
-  video_id: "zfgXBz9fKQw",
-  video_url: "https://www.youtube.com/embed/zfgXBz9fKQw?si=_om_rfowxPxYfrt-",
+  // video_id: "zfgXBz9fKQw",
+  // video_url: "https://www.youtube.com/embed/zfgXBz9fKQw?si=_om_rfowxPxYfrt-",
+  video_path: "/videos/legrobot_box.mp4",
   file_path: robotBoxCode,
   description: robotBoxDes,
   task_name: "Climbe-Sofa",
 };
 
 const legRobot_surfboard = {
-  video_id: "Nr8eee4UN5U",
-  video_url: "https://www.youtube.com/embed/Nr8eee4UN5U?si=HVm8_DEbpOjk4lbA",
+  // video_id: "Nr8eee4UN5U",
+  // video_url: "https://www.youtube.com/embed/Nr8eee4UN5U?si=HVm8_DEbpOjk4lbA",
+  video_path: "/videos/legrobot_gap.mp4",
   file_path: robotSurfboardCode,
   description: robotSurfboardDes,
   task_name: "Traverse-Sofa",
 };
 
 const legRobot_vase = {
-  video_id: "vOn5N2d7VY8",
-  video_url: "https://www.youtube.com/embed/vOn5N2d7VY8?si=IxRPxkHh7exL8c5V",
+  // video_id: "vOn5N2d7VY8",
+  // video_url: "https://www.youtube.com/embed/vOn5N2d7VY8?si=IxRPxkHh7exL8c5V",
+  video_path: "/videos/legrobot_vase.mp4",
   file_path: robotVaseCode,
   description: robotVaseDes,
   task_name: "Vase-Push",
 };
 
 const arm_scroll = {
-  video_id: "br0Uxuernds",
-  video_url: "https://www.youtube.com/embed/br0Uxuernds?si=YhBwoQs8_A22LcH3",
+  // video_id: "br0Uxuernds",
+  // video_url: "https://www.youtube.com/embed/br0Uxuernds?si=YhBwoQs8_A22LcH3",
+  video_path: "/videos/arm_scroll.mp4",
   file_path: armScrollCode,
   description: armScrollDes,
   task_name: "Grasp-Can",
 };
 
 const arm_hammer = {
-  video_id: "xZlQ6MsZr0Q",
-  video_url: "https://www.youtube.com/embed/xZlQ6MsZr0Q?si=VMJ3oHoUSTacFbUM",
+  // video_id: "xZlQ6MsZr0Q",
+  // video_url: "https://www.youtube.com/embed/xZlQ6MsZr0Q?si=VMJ3oHoUSTacFbUM",
+  video_path: "/videos/arm_hammer.mp4",
   file_path: armHammerCode,
   description: armHammerDes,
   task_name: "Reach-Milk",
 };
 
 const arm_magnet = {
-  video_id: "dvhtE0OKLbc",
-  video_url: "https://www.youtube.com/embed/dvhtE0OKLbc?si=ASg3CZNaSvCGjDnr",
+  // video_id: "dvhtE0OKLbc",
+  // video_url: "https://www.youtube.com/embed/dvhtE0OKLbc?si=ASg3CZNaSvCGjDnr",
+  video_path: "/videos/arm_magnet.mp4",
   file_path: armMagnetCode,
   description: armMagnetDes,
   task_name: "Press-Button",

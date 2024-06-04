@@ -1,21 +1,8 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
-import { ButtonGroup } from "@mui/material";
-import CameraIcon from "@mui/icons-material/PhotoCamera";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import CssBaseline from "@mui/material/CssBaseline";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { styled } from "@mui/system";
 
 export default function Abstract() {
   //   function handleButtonPress(demo_name) {
@@ -23,6 +10,26 @@ export default function Abstract() {
   //   }
 
   //   let currentDemos = DEMO_CODES[displayDemo];
+
+  const Analyzer = styled("span")({
+    color: "green",
+    fontWeight: "bold",
+  });
+
+  const Planner = styled("span")({
+    color: "red",
+    fontWeight: "bold",
+  });
+
+  const Calculator = styled("span")({
+    color: "orange",
+    fontWeight: "bold",
+  });
+
+  const Coder = styled("span")({
+    color: "blue",
+    fontWeight: "bold",
+  });
 
   return (
     <main>
@@ -75,17 +82,11 @@ export default function Abstract() {
             design inspired by neurology, RoboTool operates in a manner akin to
             the specialized functions of the cerebral cortex. RoboTool
             incorporates four pivotal components: (i) an{" "}
-            <span style={{ color: "green", fontWeight: "bold" }}>Analyzer</span>{" "}
-            that interprets natural language to discern key task-related
-            concepts, (ii) a{" "}
-            <span style={{ color: "red", fontWeight: "bold" }}>Planner</span>{" "}
+            <Analyzer>Analyzer</Analyzer> that interprets natural language to
+            discern key task-related concepts, (ii) a <Planner>Planner</Planner>{" "}
             that generates comprehensive strategies based on the language input
-            and key concepts, (iii) a{" "}
-            <span style={{ color: "orange", fontWeight: "bold" }}>
-              Calculator
-            </span>{" "}
-            that computes parameters for each skill, and (iv) a{" "}
-            <span style={{ color: "blue", fontWeight: "bold" }}>Coder</span>{" "}
+            and key concepts, (iii) a <Calculator>Calculator</Calculator> that
+            computes parameters for each skill, and (iv) a <Coder>Coder</Coder>{" "}
             that translates these plans into executable Python code. We propose
             a novel benchmark to evaluate RoboTool across diverse robotic
             configurations, including a robotic arm and a quadrupedal robot. Our

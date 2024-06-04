@@ -3,8 +3,17 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
+import { styled } from "@mui/system";
 
 import roboToolIcon from "../imgs/icon_RoboTool.png";
+
+const AuthorLink = styled(Link)({
+  textDecoration: "none",
+  "&:hover": {
+    textDecoration: "none",
+  },
+  color: "white",
+});
 
 export default function Title() {
   return (
@@ -29,7 +38,7 @@ export default function Title() {
           <Box marginTop="00px" marginBottom="20px" align="center">
             <img
               src={roboToolIcon}
-              // alt="Random"
+              alt="roboTool_icon"
               style={{
                 width: "50%",
                 height: "auto",
@@ -54,57 +63,35 @@ export default function Title() {
             // style={{ fontWeight: "bold" }}
             paragraph
           >
-            <Link sx={{ color: "white" }} href="https://mxu34.github.io/">
-              Mengdi Xu
-            </Link>
+            <AuthorLink href="https://mxu34.github.io/">Mengdi Xu</AuthorLink>
             <sup>1†</sup>,&nbsp;
-            <Link sx={{ color: "white" }} href="https://peidehuang.github.io/">
+            <AuthorLink href="https://peidehuang.github.io/">
               Peide Huang
-            </Link>
+            </AuthorLink>
             <sup>1†</sup>,&nbsp;
-            <Link
-              sx={{ color: "white" }}
-              href="https://www.google.com/url?q=https%3A%2F%2Fwenhaoyu.weebly.com%2F&sa=D&sntz=1&usg=AOvVaw39ABijfkPI4EwSHDPkBsov"
-            >
+            <AuthorLink href="https://wenhaoyu.weebly.com/">
               Wenhao Yu
-            </Link>
+            </AuthorLink>
             <sup>2†</sup>,&nbsp;
-            <Link sx={{ color: "white" }} href="">
-              Shiqi Liu
-            </Link>
+            <AuthorLink href="">Shiqi Liu</AuthorLink>
             <sup>1</sup>,&nbsp;
-            <Link
-              sx={{ color: "white" }}
-              href="https://xilunzhangrobo.github.io/"
-            >
+            <AuthorLink href="https://xilunzhangrobo.github.io/">
               Xilun Zhang
-            </Link>
+            </AuthorLink>
             <sup>1</sup>,&nbsp;
-            <Link sx={{ color: "white" }} href="https://yaruniu.com/">
-              Yaru Niu
-            </Link>
+            <AuthorLink href="https://yaruniu.com/">Yaru Niu</AuthorLink>
             <sup>1</sup>,&nbsp;
-            <Link
-              sx={{ color: "white" }}
-              href="https://research.google/people/tingnan-zhang/"
-            >
+            <AuthorLink href="https://research.google/people/tingnan-zhang/">
               Tingnan Zhang
-            </Link>
+            </AuthorLink>
             <sup>2</sup>,&nbsp;
-            <Link sx={{ color: "white" }} href="https://fxia22.github.io/">
-              Fei Xia
-            </Link>
+            <AuthorLink href="https://fxia22.github.io/">Fei Xia</AuthorLink>
             <sup>2</sup>,&nbsp;
-            <Link sx={{ color: "white" }} href="https://www.jie-tan.net/">
-              Jie Tan
-            </Link>
+            <AuthorLink href="https://www.jie-tan.net/">Jie Tan</AuthorLink>
             <sup>2</sup>,&nbsp;
-            <Link
-              sx={{ color: "white" }}
-              href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"
-            >
+            <AuthorLink href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html">
               Ding Zhao
-            </Link>
+            </AuthorLink>
             <sup>1</sup>
           </Typography>
 

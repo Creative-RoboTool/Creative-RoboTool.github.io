@@ -1,45 +1,33 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
-import { blueGrey } from "@mui/material/colors";
-import { ButtonGroup } from "@mui/material";
-import CameraIcon from "@mui/icons-material/PhotoCamera";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import CssBaseline from "@mui/material/CssBaseline";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
+// import Typography from "@mui/material/Typography";
+// import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { blue } from "@mui/material/colors";
 
 import Title from "./components/Title";
-import Demo from "./components/Demos";
 import Intro from "./components/Intro";
 import Abstract from "./components/Abstract";
+import Demo from "./components/Demos";
 import Prompts from "./components/Prompts";
+import Failures from "./components/Failures";
+import BibTeX from "./components/BibTeX";
 import "./App.css";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center">
+//       {"Copyright © "}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{" "}
+//       {new Date().getFullYear()}
+//       {"."}
+//     </Typography>
+//   );
+// }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // TODO remove, this demo shouldn't need to reset the theme.
 // const defaultTheme = createTheme();
@@ -76,6 +64,8 @@ export default function App() {
       <Abstract />
       <Demo />
       <Prompts />
+      <Failures />
+      <BibTeX />
 
       {/* Footer */}
       <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">

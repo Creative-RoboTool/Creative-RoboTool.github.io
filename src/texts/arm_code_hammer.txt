@@ -16,11 +16,10 @@ milk_center_position = get_center('milk')
 # Use the 'move_to_position' skill to move the grasped hammer to make contact with the milk.
 move_to_position(milk_center_position)
 
-# Use the 'move_to_position' skill to push the milk into the workspace.
-# Assuming the workspace is a 3D box, we will push the milk to the center of the workspace.
-x_min, y_min, z_min, x_max, y_max, z_max = get_workspace_range()
-workspace_center = np.array([(x_min + x_max) / 2, (y_min + y_max) / 2, (z_min + z_max) / 2])
-move_to_position(workspace_center)
+# Use the 'move_to_position' skill to push the milk into the workspace. 
+milk_size = get_size('milk')
+target_position = [0.0, 0.0, milk_size[2]/2]
+move_to_position(target_position)
 
 # Use the 'open_gripper' skill to release the hammer.
 open_gripper()
