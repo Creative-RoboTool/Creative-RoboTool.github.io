@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a0036bef.css",
-    "main.js": "/static/js/main.dde8521b.js",
+    "main.js": "/static/js/main.a997fd40.js",
     "static/js/787.b5eb48a5.chunk.js": "/static/js/787.b5eb48a5.chunk.js",
     "static/media/icon_RoboTool.png": "/static/media/icon_RoboTool.66c0a6988d7a9588cb48.png",
     "static/media/legRobot_prompt_planner.txt": "/static/media/legRobot_prompt_planner.76383a1791710381c902.txt",
@@ -27,11 +27,11 @@
     "index.html": "/index.html",
     "static/media/bibtex.txt": "/static/media/bibtex.4cf59bd92e1ed4a3cdc2.txt",
     "main.a0036bef.css.map": "/static/css/main.a0036bef.css.map",
-    "main.dde8521b.js.map": "/static/js/main.dde8521b.js.map",
+    "main.a997fd40.js.map": "/static/js/main.a997fd40.js.map",
     "787.b5eb48a5.chunk.js.map": "/static/js/787.b5eb48a5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0036bef.css",
-    "static/js/main.dde8521b.js"
+    "static/js/main.a997fd40.js"
   ]
 }
